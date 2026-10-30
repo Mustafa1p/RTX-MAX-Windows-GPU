@@ -1,0 +1,11 @@
+{
+  "historical_tests_before_reference_hardware_run": true,
+  "upstream_groups": 15,
+  "upstream_all_passed": true,
+  "palit_direct_topology_cases": 26,
+  "palit_mock_unlock_flow_cases": 27,
+  "palit_manual_app_cases": 9,
+  "internal_auto_entry_cases": 20,
+  "internal_windows_discovery_cases": 8,
+  "host_tests_are_simulations_not_hardware_proof": true
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "captured_utc": "2026-10-30T13:58:14.2688929Z",
+  "source": "actual run of the public Check-RTXMAX.ps1 on the reference PC",
+  "privacy": "allowlisted excerpt; partition GUIDs, drive identities and paths omitted",
+  "read_only": true,
+  "performance_tested": false,
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 3060 Ti",
+    "driver": "610.88",
+    "vbios": "94.04.6b.00.f4",
+    "temperature_c": 59,
+    "power_limit_w": 200,
+    "reference_gpu_signature_match": true
+  },
+  "device_error_codes": [
+    0
+  ],
+  "installed_artifact_hashes_match": true,
+  "actual_internal_boot_matches": true,
+  "relevant_error_event_count": 0,
+  "encrypted_volume_protection_statuses": [
+    "On",
+    "On",
+    "On"
+  ],
+  "secure_boot_enabled": false,
+  "fast_startup_enabled": false
+}

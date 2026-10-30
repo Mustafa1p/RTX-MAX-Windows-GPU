@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "checked_at_baghdad": "2026-10-30T17:12:39.389434+03:00",
+  "scope": "Public packaging/tools validation; archived GPU hardware qualification is separate.",
+  "python_result_and_rejection_tests": {
+    "passed": true,
+    "count": 9
+  },
+  "synthetic_boot_option_parser": {
+    "passed": true,
+    "count": 7,
+    "firmware_access": false
+  },
+  "public_powershell_syntax": {
+    "passed": true,
+    "script_count": 5
+  },
+  "firmware_compile_checks": {
+    "manual": true,
+    "internal": true,
+    "hardware_tested_for_new_images": false,
+    "live_installation_changed": false
+  },
+  "staging_checks": {
+    "manual_passed": true,
+    "internal_passed": true,
+    "existing_directory_refused": true,
+    "corrupt_profile_refused_before_output_creation": true,
+    "disk_format_or_boot_edits_performed": false
+  },
+  "real_read_only_health_run": {
+    "elevated_passed": true,
+    "standard_user_graceful_unknowns": true,
+    "reference_installed_hashes_match": true,
+    "actual_internal_boot_matches": true,
+    "performance_test_run": false
+  },
+  "publication": {
+    "protected_files_checked": 809,
+    "line_endings_and_hashes_preserved": true,
+    "public_staged_file_count": 850,
+    "commit_created": false,
+    "push_performed": false
+  },
+  "visual_review": [
+    "banner.png",
+    "results.png",
+    "health-check.png",
+    "boot-flow.png"
+  ],
+  "private_machine_identifiers_found": 0,
+  "gpu_rom_profiles_or_firmware_binaries_distributed": false,
+  "github_upload_performed": false
+}

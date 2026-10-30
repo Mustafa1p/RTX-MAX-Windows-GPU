@@ -1,0 +1,158 @@
+{
+  "verified_at_baghdad": "2026-10-30T12:40:41.598042+03:00",
+  "boot_utc": "2026-10-30T09:33:26.5000000Z",
+  "efi_sha256": "5513b4ed21002e35432d34e9f670b721c2a757e915ddcfa8abf6799056a6737a",
+  "profile_sha256": "062bd47ff2cb22a00e34099f5878d92895134f1549e8b21fc99d819516e5ead3",
+  "automatic_default_enabled": true,
+  "manual_u_required": false,
+  "usb_source_or_asset_dependency": false,
+  "usb_connected_during_test": true,
+  "physical_usb_absence_claimed": false,
+  "gain_verified": true,
+  "correctness_passed": true,
+  "matching_source_libraries_driver_gpu_power": true,
+  "verified_windows_unlock_sessions": 3,
+  "results": [
+    {
+      "mode": "FP32",
+      "before_tflops": 9.676597220675673,
+      "after_tflops": 10.276713095912978,
+      "gain_percent": 6.201724237886608,
+      "ratio": 1.062017242378866,
+      "before_trials": [
+        9.676597220675673,
+        9.102283701410485,
+        9.70587744956529
+      ],
+      "after_trials": [
+        10.374780815420488,
+        9.876927880623066,
+        10.276713095912978
+      ],
+      "all_after_trials_above_all_before": true
+    },
+    {
+      "mode": "FP16",
+      "before_tflops": 34.7129777328289,
+      "after_tflops": 62.41460403070136,
+      "gain_percent": 79.80193030710348,
+      "ratio": 1.7980193030710347,
+      "before_trials": [
+        34.84817040866227,
+        34.7129777328289,
+        34.67822222718727
+      ],
+      "after_trials": [
+        63.34059416900778,
+        62.1090850179265,
+        62.41460403070136
+      ],
+      "all_after_trials_above_all_before": true
+    },
+    {
+      "mode": "BF16",
+      "before_tflops": 34.71297668766599,
+      "after_tflops": 63.92842725898809,
+      "gain_percent": 84.16290782029867,
+      "ratio": 1.8416290782029867,
+      "before_trials": [
+        30.033371994884835,
+        34.76242574812739,
+        34.71297668766599
+      ],
+      "after_trials": [
+        64.37300968088842,
+        63.92842725898809,
+        63.778908367468915
+      ],
+      "all_after_trials_above_all_before": true
+    },
+    {
+      "mode": "TF32",
+      "before_tflops": 16.36711116984811,
+      "after_tflops": 32.48742413280701,
+      "gain_percent": 98.49210893524163,
+      "ratio": 1.9849210893524163,
+      "before_trials": [
+        16.244295223869617,
+        16.36711116984811,
+        17.688156492862948
+      ],
+      "after_trials": [
+        32.4589422621354,
+        32.48742413280701,
+        32.51792230702097
+      ],
+      "all_after_trials_above_all_before": true
+    }
+  ],
+  "prior_mixed_compute_check": {
+    "passed": true,
+    "elapsed_seconds": 602.282,
+    "completed_cycles": 88,
+    "all_output_elements_checked": 4602200064,
+    "max_recorded_temperature_c": 75
+  },
+  "conditions": {
+    "before": {
+      "start_temperature_c": 58,
+      "max_recorded_mode_end_temperature_c": 74,
+      "recorded_sm_clock_mhz_range": [
+        1710,
+        1950
+      ]
+    },
+    "after": {
+      "start_temperature_c": 58,
+      "max_recorded_mode_end_temperature_c": 75,
+      "recorded_sm_clock_mhz_range": [
+        1665,
+        1920
+      ]
+    }
+  },
+  "limitation": "Finite compute and startup verification only. No guarantee of lifetime/perfect stability or untested sleep, hibernate, resume, driver resets and application speedups. USB remained connected; actual internal BootCurrent and pinned internal assets were verified directly.",
+  "schema_version": 1,
+  "evidence_type": "first_party_hardware_measurements_not_independent_certification",
+  "boot_source_evidence": {
+    "internal_automatic_boot_observed": true,
+    "path": "\\EFI\\PalitUnlock\\AUTO.EFI",
+    "partition_identity_matched": true,
+    "private_partition_identifiers_omitted": true
+  },
+  "hardware": {
+    "gpu_brand": "Palit",
+    "gpu_model": "NVIDIA GeForce RTX 3060 Ti",
+    "pci_device_id": "10de:2489",
+    "subsystem_id": "10de:2489",
+    "vram_mib": 8192,
+    "vbios": "94.04.6b.00.f4",
+    "nvidia_driver": "610.88",
+    "power_limit_w": 200,
+    "motherboard": "ASRock B550M-HDV",
+    "bios": "P3.40",
+    "cpu": "AMD Ryzen 5 3600",
+    "os": "Windows 11 Pro",
+    "os_build": "26300"
+  },
+  "installation_at_verification": {
+    "status": "installed_and_verified_on_reference_pc",
+    "mode": "internal_automatic_quiet",
+    "separate_fat32_esp_gib": 1,
+    "secure_boot_enabled": false,
+    "fast_startup_enabled": false,
+    "c_bitlocker_protection": "On",
+    "d_bitlocker_protection": "On",
+    "c_and_d_fully_encrypted": true,
+    "vbios_flashed": false,
+    "overclock_applied": false
+  },
+  "unverified": [
+    "other PCs including identical GPU names",
+    "physical USB removal during boot",
+    "sleep/hibernate/resume",
+    "driver reset/TDR",
+    "games and application speedups",
+    "lifetime stability"
+  ]
+}

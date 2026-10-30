@@ -1,0 +1,34 @@
+name: Validate documentation tools and archived evidence
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validation:
+    runs-on: windows-latest
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Recompute archived results and rejection tests
+        run: |
+          python tools/verify_results.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -v
+          exit $LASTEXITCODE
+      - name: Parse public PowerShell scripts
+        run: |
+          $files = @('RTX-MAX.ps1','Check-RTXMAX.ps1','Install-RTXMAX.ps1') + @(Get-ChildItem tools -Filter *.ps1 | ForEach-Object FullName)
+          foreach ($file in $files) {
+            $tokens=$null; $errors=$null
+            [void][System.Management.Automation.Language.Parser]::ParseFile((Resolve-Path $file),[ref]$tokens,[ref]$errors)
+            if ($errors) { throw ($errors | Out-String) }
+          }
+      - name: Test boot option parser without firmware access
+        run: powershell.exe -NoProfile -File tools/Test-BootParser.ps1
+      - name: Check public package and local links
+        run: python tools/check_package.py

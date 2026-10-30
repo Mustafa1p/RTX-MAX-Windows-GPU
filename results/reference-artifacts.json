@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "scope": "hashes of artifacts used on the reference PC; not distributed release binaries",
+  "efi_sha256": "5513b4ed21002e35432d34e9f670b721c2a757e915ddcfa8abf6799056a6737a",
+  "profile_sha256": "062bd47ff2cb22a00e34099f5878d92895134f1549e8b21fc99d819516e5ead3",
+  "assets": [
+    {
+      "name": "booter_load_ga102.bin",
+      "bytes": 61256,
+      "sha256": "056cbc064a888f80717726c54d7f64fcd68044d123870c95a74f37f4975dcaa4"
+    },
+    {
+      "name": "v67-ga102-610.43.03.bin",
+      "bytes": 64000,
+      "sha256": "2a0aa1f86d0b6afff5214d641d87d46dc98ef06ed908ff05d0ddbad5ffb7e197"
+    },
+    {
+      "name": "gsp_ga10x.bin",
+      "bytes": 84277400,
+      "sha256": "572373620a37418f24dc16b5031c39338778c3257e48e8408de9a57291b24f3a"
+    },
+    {
+      "name": "gsp_boot_ga102.bin",
+      "bytes": 24576,
+      "sha256": "3df651acb174fd5f5561a1996965b192f50c5d763168446ed0d4ead19d895768"
+    },
+    {
+      "name": "gsp_boot_desc_ga102.bin",
+      "bytes": 84,
+      "sha256": "cc5a3fc1f4c47f2fe107b1b68f0176d8a448e6dec84b575e5560ccef5262bf15"
+    }
+  ]
+}
