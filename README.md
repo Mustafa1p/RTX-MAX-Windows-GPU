@@ -12,6 +12,62 @@
 
 > **Support scope:** one verified Palit RTX 3060 Ti system. A matching GPU name or PCI ID does not qualify another PC. This is an experimental community port, with no NVIDIA or Palit endorsement. There is no universal one-click unlock installer in this repository.
 
+## Setup: check support before applying
+
+### 1. Download and check your GPU
+
+Clone the repository, or use **Code → Download ZIP** and extract it. Open PowerShell in the extracted project folder:
+
+```powershell
+git clone https://github.com/Mustafa1p/RTX-MAX-Windows-GPU.git
+Set-Location RTX-MAX-Windows-GPU
+.\Install-RTXMAX.ps1 -Action Check
+```
+
+The first two commands are only needed when cloning with Git. Run PowerShell **as administrator** for complete boot/encryption checks. The check needs the installed NVIDIA driver and its `nvidia-smi` tool; it does not need Python and does not apply the unlock.
+
+### 2. Read the support result
+
+| GPU family | This port's support | Next step |
+| --- | --- | --- |
+| RTX 20 | Unsupported | Do not apply this port |
+| RTX 30 | One Palit RTX 3060 Ti reference PC verified | Compare the exact signature, then qualify your own PC |
+| RTX 40 | Unsupported | Do not apply this port |
+| RTX 50 | Unsupported | Do not apply this port |
+
+- **`Compatibility: Reference GPU signature matches`** means the model, PCI/subsystem IDs, VBIOS, driver, memory size and power limit match the published reference. It is a **candidate match**, not permission to apply the reference PC's files. Display topology and a local runtime profile still need verification.
+- **`Compatibility: ... outside the published reference test`** means this installation is unqualified. Stop before applying the port; do not force it or edit IDs/approval flags to bypass a refusal.
+- **`UNKNOWN`** means a check could not establish its result. Resolve missing permissions/telemetry first; unknown is not supported.
+- Green device, temperature and boot checks report those individual checks only. They do not prove unlocked Tensor performance or qualify another PC.
+
+The exact reference signature and qualification requirements are in [COMPATIBILITY.md](docs/COMPATIBILITY.md). The repository does not provide a Windows-only test that can certify all preboot hardware conditions.
+
+### 3. Apply only after local qualification
+
+For a new PC, first follow [the manual USB qualification procedure](docs/INSTALL.md#option-2--manual-usb-experiment): two matching cold probe captures, a reviewed local profile/display route, a stock correctness-checked benchmark and a recovery plan. **Do not use another PC's PROFILE.BIN or partition GUIDs.**
+
+Once those prerequisites are verified, build the manual port using your installed LLVM/C++ build tools:
+
+```powershell
+.\tools\Build-Firmware.ps1 -Mode Manual `
+    -LlvmBin C:\Tools\LLVM\bin `
+    -OutputDirectory .\build\manual-local
+```
+
+Then stage your own reviewed profile and locally extracted firmware assets. Replace the example paths with your actual local paths; the destination parent must exist and the destination folder must be new:
+
+```powershell
+.\Install-RTXMAX.ps1 -Action Stage `
+    -BuildDirectory .\build\manual-local `
+    -ProfilePath C:\LocalEvidence\PROFILE.BIN `
+    -AssetsDirectory C:\LocalAssets\firmware-assets `
+    -Destination C:\LocalPackages\rtxmax-manual
+```
+
+`Stage` prepares files only; it does not apply the unlock or change the boot configuration. Complete the [documented USB boot and manual U step](docs/INSTALL.md#option-2--manual-usb-experiment), then check restoration/Windows handoff, compute correctness, measured gains and stability. Only after that succeeds should you follow [internal automatic startup](docs/INSTALL.md#option-3--internal-automatic-startup), using the destination PC's own partition identities.
+
+If your qualified internal installation is already present, check it with `Check-RTXMAX.ps1`; it reapplies the unlock during full startup. There is no need to reinstall it on each Windows session. A changed driver, VBIOS, BIOS or display route requires requalification.
+
 ## Measured results
 
 <img src="assets/results.png" alt="Measured FP32, FP16, BF16 and TF32 before and after on the reference PC, in TFLOPS" width="1100">
