@@ -32,3 +32,12 @@ jobs:
         run: powershell.exe -NoProfile -File tools/Test-BootParser.ps1
       - name: Check public package and local links
         run: python tools/check_package.py
+      - name: Build Windows desktop and test native backend
+        run: .\tools\Build-Desktop.ps1 -OutputDirectory .\build\desktop-ci
+      - name: Upload portable desktop build
+        uses: actions/upload-artifact@v4
+        with:
+          name: RTX-MAX-Windows-x64
+          path: |
+            build/desktop-ci/RTX-MAX.exe
+            build/desktop-ci/desktop-build.json

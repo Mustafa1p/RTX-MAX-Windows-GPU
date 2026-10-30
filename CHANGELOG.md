@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 — 2026-10-30
+
+- Add a portable Windows x64 WPF desktop workbench with Overview, Benchmark, Setup and Reports pages.
+- Add native CUDA/cuBLAS output-checked measurements and strict matched Before/After comparisons, without Python.
+- Add official pinned NVIDIA library downloads, guided source/setup extraction and target-gated native file-package preparation.
+- Keep unsupported GPUs and unqualified profiles blocked from this firmware workflow; boot/partition/encryption changes remain the documented reviewed procedure.
+- Add local and redacted exports, native backend rejection tests and desktop build artifacts.
+
 ## 0.1.0 — 2026-10-30
 
 - Publish the documented Palit RTX 3060 Ti reference experiment and original raw measurements.

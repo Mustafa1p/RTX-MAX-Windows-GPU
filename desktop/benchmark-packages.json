@@ -1,0 +1,4 @@
+[
+  {"component":"cuda_cudart","version":"12.8.90","url":"https://developer.download.nvidia.com/compute/cuda/redist/cuda_cudart/windows-x86_64/cuda_cudart-windows-x86_64-12.8.90-archive.zip","sha256":"4a39058fd8519444a81cfc7ae055d136f48d1a31ffa41ae255b35b2edd61e13b","archive_bytes":3037735},
+  {"component":"libcublas","version":"12.8.4.1","url":"https://developer.download.nvidia.com/compute/cuda/redist/libcublas/windows-x86_64/libcublas-windows-x86_64-12.8.4.1-archive.zip","sha256":"57a470112cec7e112c95253dde8b3c7184d795dbd92b0bde77a4cb7f8c94c8aa","archive_bytes":563660944}
+]

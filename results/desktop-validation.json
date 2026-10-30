@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "version": "0.2.0",
+  "checked_at_baghdad": "2026-10-30T18:12:05.933843+03:00",
+  "release_exe_sha256": "def60d6cca157638f8b12f93273f33a645ceb7145a5ecbd54c41dc47a06cf669",
+  "native_synthetic_backend_tests": {
+    "passed": true,
+    "count": 25,
+    "hardware_changes": false
+  },
+  "actual_hardware_smoke": {
+    "passed": true,
+    "full_performance_measurement": false,
+    "modes": [
+      "BF16",
+      "FP16",
+      "FP32",
+      "TF32"
+    ],
+    "large_smoke_n": 256,
+    "independent_cpu_reference_n": 128,
+    "all_output_elements_checked": true,
+    "max_sampled_temperature_c": 61
+  },
+  "actual_admin_scan": {
+    "elevated": true,
+    "verified_existing_installation": true,
+    "checks": 12
+  },
+  "native_manual_file_staging_integration": {
+    "passed": true,
+    "live_boot_changes": false
+  },
+  "full_current_measurement": {
+    "completed": false,
+    "reason": "Idle guard refused while background GPU workloads remained active; user chose to leave applications open."
+  },
+  "real_native_before_after_pair_tested": false,
+  "visual_validation": {
+    "rendered_wpf_pages": [
+      "Overview",
+      "Benchmark",
+      "Setup",
+      "Reports"
+    ],
+    "viewports": [
+      [
+        1280,
+        840
+      ],
+      [
+        1080,
+        720
+      ]
+    ],
+    "interactive_clickthrough_tested": false
+  },
+  "nvidia_driver_or_firmware_changed": false,
+  "gpu_overclock_or_power_limit_changed": false,
+  "private_device_identifiers_included": false
+}

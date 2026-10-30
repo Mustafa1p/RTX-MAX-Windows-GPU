@@ -6,6 +6,18 @@
 
 [العربية](README.ar.md) · [Results](RESULTS.md) · [Installation options](docs/INSTALL.md) · [Health checks](docs/HEALTH.md) · [Build from source](docs/BUILD.md)
 
+## Windows desktop app
+
+**[Download RTX-MAX.exe](https://github.com/Mustafa1p/RTX-MAX-Windows-GPU/releases/download/v0.2.0/RTX-MAX.exe)** — portable Windows x64, no Python required.
+
+The desktop workbench combines GPU/health and unlock-eligibility checks, native correctness-checked CUDA before/after measurements, guided setup with local file validation/preparation, and local report exports. Its status distinguishes unsupported hardware, a candidate needing preboot review and a verified existing installation. Other RTX generations can be inspected without being approved for this firmware port.
+
+![RTX-MAX desktop workbench — actual WPF layout and scan data](assets/desktop-overview.png)
+
+[Desktop guide and requirements →](docs/DESKTOP.md) · [Download releases →](https://github.com/Mustafa1p/RTX-MAX-Windows-GPU/releases)
+
+Firmware application still follows the qualified preboot procedure. The app does not turn a name match into universal support or silently modify disks/encryption/startup.
+
 | Reference installation | BF16 gain | Mixed-load check | Public package |
 | --- | --- | --- | --- |
 | 🟢 Internal automatic boot verified | **+84.2% measured** | 602 seconds / correctness passed | Source, tools, documentation, evidence |
@@ -154,6 +166,7 @@ firmware/            Attributed upstream source + local Palit port
 results/             Allowlisted public measurements and provenance
 tools/               Build, validation and publication checks
 tests/               Integrity and rejection-path tests
+desktop/             Native WPF EXE, CUDA engine and guided setup source
 ```
 
 ## Credits and license
